@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -26,20 +26,11 @@ jobs:
     - name: Publish
       run: dotnet publish -c Release -o ./publish
 
-    - name: Web Deploy Action
-      uses: zenoskongfu/server_deploy@1.0.1
+    - name: Deploy via WebDeploy
+      uses: rasmusbuchholdt/simply-web-deploy@2.1.0
       with:
-        source_dir: ./publish
-        server_key: ${{ secrets.SERVER_PASSWORD }}
-        server_user: ${{ secrets.SERVER_USERNAME }}
-        server_host: ${{ secrets.SERVER_HOSTNAME }}
-          
-
-    # - name: Deploy via WebDeploy
-    #   uses: rasmusbuchholdt/simply-web-deploy@2.1.0
-    #   with:
-    #     website-name: ${{ secrets.WEB_APP_URL }}
-    #     server-computer-name: ${{ secrets.SERVER_HOSTNAME }}
-    #     server-username: ${{ secrets.SERVER_USERNAME }}
-    #     server-password: ${{ secrets.SERVER_PASSWORD }}
-    #     source-path: './publish'
+        website-name: ${{ secrets.WEB_APP_URL }}
+        server-computer-name: ${{ secrets.SERVER_HOSTNAME }}
+        server-username: ${{ secrets.SERVER_USERNAME }}
+        server-password: ${{ secrets.SERVER_PASSWORD }}
+        source-path: './publish'
