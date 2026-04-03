@@ -26,12 +26,12 @@ jobs:
 
     - name: Publish
       run: |
-          dotnet publish \
-            --configuration Release \
-            --output ./publish \
-            --runtime win-x86 \
-            --self-contained false \
-            -p:ParallelStaticWebAssetsBuild=false \
+          dotnet publish `
+            --configuration Release `
+            --output ./publish `
+            --runtime win-x86 `
+            --self-contained false `
+            -p:ParallelStaticWebAssetsBuild=false `
             -p:BuildInParallel=false
 
     - name: Deploy via WebDeploy
