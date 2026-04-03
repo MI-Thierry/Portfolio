@@ -89,6 +89,9 @@ jobs:
         run: |
           curl --ssl-no-revoke \
             --ftp-method nocwd \
+            --ftp-skip-pasv-ip \
             -u "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
             -Q "DELE /site/wwwroot/app_offline.htm" \
             "ftps://${{ secrets.FTP_SERVER }}/"
+            --max-time 30 \
+            -v
