@@ -49,6 +49,19 @@ jobs:
           name: blazor-publish
           path: ./publish
 
+      - name: Create app_offline.htm
+        run: |
+          mkdir -p ./offline
+          cat > ./offline/app_offline.htm << 'EOF'
+          <!DOCTYPE html>
+          <html>
+            <head><title>Updating...</title></head>
+            <body>
+              <h1>Site is being updated, back shortly...</h1>
+            </body>
+          </html>
+          EOF
+
       - name: Take site offline
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -69,11 +82,13 @@ jobs:
           local-dir: ./publish/
           server-dir: /wwwroot/
           protocol: ftps
+          exclude: |
+            **/app_offline.htm
           
       - name: Bring site back online
         run: |
           curl --ssl-no-revoke \
             --ftp-method nocwd \
             -u "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
-            -Q "DELE /wwwroot/app_offline.htm" \
+            -Q "DELE /site/wwwroot/app_offline.htm" \
             "ftps://${{ secrets.FTP_SERVER }}/"
