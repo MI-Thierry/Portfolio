@@ -49,13 +49,16 @@ jobs:
           name: blazor-publish
           path: ./publish
 
-      - name: Stop site before deploying (prevent file lock)
-        run: |
-          curl -s -o /dev/null -w "%{http_code}" \
-            -X POST \
-            "https://${{ secrets.FTP_SERVER }}/app_offline.htm" || true
-          echo "app_offline.htm trick - uploading placeholder"
-          echo "Deploying, please wait..." > ./publish/app_offline.htm
+      - name: Take site offline
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./offline/        # folder containing just app_offline.htm
+          server-dir: /wwwroot/
+          protocol: ftps
+          security: loose
       
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -64,8 +67,13 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./publish/
-          server-dir: /site/wwwroot/
+          server-dir: /wwwroot/
           protocol: ftps
           
-      - name: Remove app_offline to bring site back up
-        run: rm -f ./publish/app_offline.htm
+      - name: Bring site back online
+        run: |
+          curl --ssl-no-revoke \
+            --ftp-method nocwd \
+            -u "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
+            -Q "DELE /wwwroot/app_offline.htm" \
+            "ftps://${{ secrets.FTP_SERVER }}/"
