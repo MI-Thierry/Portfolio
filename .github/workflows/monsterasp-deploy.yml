@@ -30,9 +30,6 @@ jobs:
             --configuration Release `
             --output ./publish `
             --runtime win-x86 `
-            --self-contained false `
-            -p:ParallelStaticWebAssetsBuild=false `
-            -p:BuildInParallel=false
 
     - name: Deploy via WebDeploy
       uses: rasmusbuchholdt/simply-web-deploy@2.1.0
