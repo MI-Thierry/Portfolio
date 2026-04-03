@@ -25,7 +25,14 @@ jobs:
       run: dotnet build -c Release --no-restore
 
     - name: Publish
-      run: dotnet publish -c Release -o ./publish --runtime win-x86 --self-contained false
+      run: |
+          dotnet publish \
+            --configuration Release \
+            --output ./publish \
+            --runtime win-x86 \
+            --self-contained false \
+            -p:ParallelStaticWebAssetsBuild=false \
+            -p:BuildInParallel=false
 
     - name: Deploy via WebDeploy
       uses: rasmusbuchholdt/simply-web-deploy@2.1.0
