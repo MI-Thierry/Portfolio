@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/monsterasp-deploy.yml" />
+  </Folder>
   <Project Path="Portfolio/Portfolio.Client/Portfolio.Client.csproj" />
   <Project Path="Portfolio/Portfolio/Portfolio.csproj" />
 </Solution>
