@@ -40,7 +40,7 @@ jobs:
           path: ./publish
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Download publish artifact
@@ -48,11 +48,24 @@ jobs:
         with:
           name: blazor-publish
           path: ./publish
-      - name: Deploy via WebDeploy
-        uses: rasmusbuchholdt/simply-web-deploy@2.1.0
+
+      - name: Stop site before deploying (prevent file lock)
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" \
+            -X POST \
+            "https://${{ secrets.FTP_SERVER }}/app_offline.htm" || true
+          echo "app_offline.htm trick - uploading placeholder"
+          echo "Deploying, please wait..." > ./publish/app_offline.htm
+      
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          website-name: ${{ secrets.SITE_NAME }}
-          server-computer-name: ${{ secrets.SERVER_URL }}
-          server-username: ${{ secrets.USERNAME }}
-          server-password: ${{ secrets.PASSWORD }}
-          source-path: './publish'
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./publish/
+          server-dir: /site/wwwroot/
+          protocol: ftps
+          
+      - name: Remove app_offline to bring site back up
+        run: rm -f ./publish/app_offline.htm
