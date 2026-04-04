@@ -2,9 +2,34 @@
 
 <PageTitle>Welcome</PageTitle>
 
-<main class="grid min-h-screen place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
-    <div class="text-center">
-        <h1 class="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl dark:text-white">Welcome to my Portfolio!</h1>
-        <p class="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 dark:text-gray-400">My name is Muhirwa I. Thierry and I'm .Net, Blazor and Flutter Software developer.</p>
-    </div>
+<header class="flex flex-row border-b border-gray-950/5 px-10 py-2 text-gray-950 dark:border-white/10 dark:text-white">
+    <img class="h-12" src="logo.svg" />
+    <div class="flex-grow"></div>
+    <nav class="flex flex-row items-center gap-6">
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#home">Home</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#about">About</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#services">Services</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#projects">Projects</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#contacts">Contacts</a>
+    </nav>
+</header>
+
+<main>
+    <section class="grid grid-flow-row grid-cols-2 place-items-center px-6 py-16" id="home">
+        <div class="flex flex-col gap-2 px-10">
+            <h1 class="font-custom text-4xl font-semibold text-gray-950 dark:text-white">
+                Full-Stack & Mobile App Developer | Flutter, ASP.NET & Blazor
+            </h1>
+            <h2 class="text-xl font-thin text-gray-900 dark:text-gray-300">
+                Your users interact with your platform across a dozen different devices.
+                I bridge that gap by building seamless, integrated systems that deliver your services
+                to smartphones, tablets, and desktops alike.
+            </h2>
+        </div>
+        <div class="absolute -z-50 h-screen w-screen rounded-full bg-linear-65 from-sky-600 to-sky-800 opacity-20 blur-3xl">
+        </div>
+        <div class="relative">
+            <img src="hero.png" alt="Hero Image"/>
+        </div>
+    </section>
 </main>
