@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-<PageTitle>Muhirwa I. Thierry</PageTitle>
+<PageTitle>Thierry I. Muhirwa</PageTitle>
 
 <header class="flex flex-row border-b border-gray-950/5 px-6 py-2 text-gray-950 md:px-10 lg:px-16 dark:border-white/10 dark:text-white">
     <img class="h-10 md:h-12" src="logo.svg" />
@@ -23,7 +23,7 @@
             <h1 class="font-custom text-center text-3xl font-semibold text-gray-950 md:text-left md:text-4xl dark:text-white">
                 Full-Stack & Mobile App Developer | Flutter, ASP.NET & Blazor
             </h1>
-            <h2 class="text-center text-lg font-thin text-gray-900 md:text-left md:text-xl dark:text-gray-300">
+            <h2 class="text-center text-lg text-gray-900 md:text-left md:text-xl dark:text-gray-300">
                 Your users interact with your platform across a dozen different devices.
                 I bridge that gap by building seamless, integrated systems that deliver your services
                 to smartphones, tablets, and desktops alike.
@@ -33,10 +33,85 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" /></svg>
             </button>
         </div>
-        <div class="absolute -z-50 h-screen w-screen rounded-full bg-linear-65 from-sky-600 to-sky-800 opacity-20 blur-3xl">
+        <div class="absolute top-0 -z-50 h-full w-screen rounded-full bg-linear-65 from-sky-600 to-sky-800 opacity-20 blur-3xl">
         </div>
         <div class="relative hidden md:block">
             <img src="hero.png" alt="Hero Image" />
+        </div>
+    </section>
+
+    <section class="px-6 py-10 md:px-10 md:py-16 lg:px-16" id="about">
+        <div class="grid grid-flow-col grid-rows-2 gap-4 md:grid-flow-row md:grid-cols-2 md:grid-rows-1">
+            <div class="relative h-full">
+                <div class="absolute -z-50 h-full w-full rounded-full bg-linear-65 from-sky-600 to-sky-800 opacity-20 blur-3xl" />
+                <div class="h-8/10 bg-[url(../dev.png)] mask-b-from-70% mask-b-to-100% bg-contain bg-center bg-no-repeat" />
+            </div>
+            <div class="font-custom flex flex-col gap-2 text-gray-800 dark:text-gray-300">
+                <h1 class="font-custom text-3xl font-semibold text-gray-950 md:text-4xl dark:text-white">
+                    About Me.
+                </h1>
+                <h2 class="text-sm md:text-lg">
+                    I am Thierry I. Muhirwa, a Full-Stack and Mobile Application Developer with over 5 years of experience in the software engineering industry.
+                    I specialize in building scalable, high-performance systems with a relentless focus on reliability and security.
+                    I don't follow trends for the sake of it;
+                    I integrate AI solutions strategically, ensuring they add genuine value and improve the user experience only where it makes sense.
+                </h2>
+                <h6>Tech stacks:</h6>
+                <ul class="list-inside list-disc">
+                    <li><span class="me-2 font-bold">Web & Backend:</span>ASP.NET Core, Blazor, C#, Entity Framework, and RESTful APIs.</li>
+                    <li><span class="me-2 font-bold">Mobile Development:</span>Flutter and Dart</li>
+                    <li><span class="me-2 font-bold">Intelligence Layer:</span>Microsoft Agent Framework for agentic AI integration.</li>
+                </ul>
+                <button type="button" class="mx-auto box-border inline-flex w-fit gap-2 rounded-full border border-transparent bg-sky-600 px-4 py-2.5 text-sm leading-5 font-medium text-white shadow-xs hover:bg-sky-800 focus:ring-4 focus:ring-sky-700 focus:outline-none md:mx-0">
+                    Get in Touch
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" /></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 py-10 md:px-10 md:py-16 lg:px-16" id="services">
+        <h1 class="font-custom mb-2 text-3xl font-semibold text-gray-950 md:text-4xl dark:text-white">
+            Services.
+        </h1>
+        <div class="grid grid-flow-col grid-rows-5 gap-4 md:grid-flow-row md:grid-cols-2 md:grid-rows-3">
+            <div>
+                <h3 class="font-custom text-2xl font-semibold text-gray-950 dark:text-white">1. Full-Stack Solutions</h3>
+                <p class="font-custom ms-6 text-lg text-gray-800 dark:text-gray-300">
+                    Building comprehensive platforms that include web and mobile applications working together seamlessly to make your services more accessible.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-custom text-2xl font-semibold text-gray-950 dark:text-white">2. Mobile Applications:</h3>
+                <p class="font-custom ms-6 text-lg text-gray-800 dark:text-gray-300">
+                    Building and integrating iOS and Android applications into your new or existing platforms, making access fast and easy for users while improving their overall experience.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-custom text-2xl font-semibold text-gray-950 dark:text-white">3. Websites:</h3>
+                <p class="font-custom ms-6 text-lg text-gray-800 dark:text-gray-300">
+                    Building modern, responsive websites using ASP.NET and Blazor to enable users to access your services easily.
+                    I also build beautiful dashboards to help you track key metrics, ensuring growth and control.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-custom text-2xl font-semibold text-gray-950 dark:text-white">4. AI Agents and Chatbots:</h3>
+                <p class="font-custom ms-6 text-lg text-gray-800 dark:text-gray-300">
+                    I Build single and multi Agent apps that enables users to get services they need by prompting the agents without having to navigate complex UIs.
+                    I also build <span class="font-semibold">Retrieval-Augmented Generation (RAG)</span> and <span class="font-semibold">Semantic Searches</span> systems that helps your user to get what they want easily and fast.
+                    I build all of this using Microsoft Agentic Framework
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-custom text-2xl font-semibold text-gray-950 dark:text-white">5. CI/CD & Deployment:</h3>
+                <p class="font-custom ms-6 text-lg text-gray-800 dark:text-gray-300">
+                    Deploying your applications to local and cloud infrastructure (Azure, AWS, Firebase, etc.) and to the stores (Apple App Store and Google Play Store).
+                </p>
+            </div>
         </div>
     </section>
 </main>
