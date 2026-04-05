@@ -1,35 +1,42 @@
 ﻿@page "/"
 
-<PageTitle>Welcome</PageTitle>
+<PageTitle>Muhirwa I. Thierry</PageTitle>
 
-<header class="flex flex-row border-b border-gray-950/5 px-10 py-2 text-gray-950 dark:border-white/10 dark:text-white">
-    <img class="h-12" src="logo.svg" />
+<header class="flex flex-row border-b border-gray-950/5 px-6 py-2 text-gray-950 md:px-10 lg:px-16 dark:border-white/10 dark:text-white">
+    <img class="h-10 md:h-12" src="logo.svg" />
     <div class="flex-grow"></div>
-    <nav class="flex flex-row items-center gap-6">
+    <nav class="hidden flex-row items-center gap-6 md:visible md:flex">
         <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#home">Home</a>
         <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#about">About</a>
         <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#services">Services</a>
         <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#projects">Projects</a>
         <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#contacts">Contacts</a>
     </nav>
+    <button type="button" class="rounded-full text-gray-950 hover:bg-gray-950/5 md:hidden dark:text-white dark:hover:bg-white/10">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" /></svg>
+    </button>
 </header>
 
 <main>
-    <section class="grid grid-flow-row grid-cols-2 place-items-center px-6 py-16" id="home">
-        <div class="flex flex-col gap-2 px-10">
-            <h1 class="font-custom text-4xl font-semibold text-gray-950 dark:text-white">
+    <section class="grid-flow-row grid-cols-2 place-items-center gap-2 px-6 py-10 md:grid md:px-10 md:py-16 lg:px-16" id="home">
+        <div class="flex flex-col items-center gap-2">
+            <h1 class="font-custom text-center text-3xl font-semibold text-gray-950 md:text-left md:text-4xl dark:text-white">
                 Full-Stack & Mobile App Developer | Flutter, ASP.NET & Blazor
             </h1>
-            <h2 class="text-xl font-thin text-gray-900 dark:text-gray-300">
+            <h2 class="text-center text-lg font-thin text-gray-900 md:text-left md:text-xl dark:text-gray-300">
                 Your users interact with your platform across a dozen different devices.
                 I bridge that gap by building seamless, integrated systems that deliver your services
                 to smartphones, tablets, and desktops alike.
             </h2>
+            <button type="button" class="mx-auto box-border inline-flex w-fit gap-2 rounded-full border border-transparent bg-sky-600 px-4 py-2.5 text-sm leading-5 font-medium text-white shadow-xs hover:bg-sky-800 focus:ring-4 focus:ring-sky-700 focus:outline-none md:mx-0">
+                Contact me
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" /></svg>
+            </button>
         </div>
         <div class="absolute -z-50 h-screen w-screen rounded-full bg-linear-65 from-sky-600 to-sky-800 opacity-20 blur-3xl">
         </div>
-        <div class="relative">
-            <img src="hero.png" alt="Hero Image"/>
+        <div class="relative hidden md:block">
+            <img src="hero.png" alt="Hero Image" />
         </div>
     </section>
 </main>
