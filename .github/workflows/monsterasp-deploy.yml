@@ -91,7 +91,7 @@ jobs:
             --ftp-method nocwd \
             --ftp-skip-pasv-ip \
             -u "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
-            -Q "DELE /wwwroot/app_offline.htm" \
+            -Q "DELETE /wwwroot/app_offline.htm" \
             "ftps://${{ secrets.FTP_SERVER }}/"
             --max-time 30 \
             -v
