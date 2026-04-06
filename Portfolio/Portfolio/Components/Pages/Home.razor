@@ -2,8 +2,24 @@
 
 <PageTitle>Thierry I. Muhirwa</PageTitle>
 
-<header class="flex flex-row border-b border-gray-950/5 px-6 py-2 text-gray-950 md:px-10 lg:px-16 dark:border-white/10 dark:text-white">
-    <img class="h-10 md:h-12" src="logo.svg" />
+<header id="scrolled-appbar" class="sha fixed z-50 flex w-full -translate-y-20 flex-row border-b border-gray-950/5 bg-white/55 px-6 py-2 text-gray-950 shadow-md shadow-gray-300/50 backdrop-blur-sm transition duration-300 ease-in-out lg:px-16 dark:border-white/10 dark:bg-gray-950/55 dark:text-white dark:shadow-gray-700/50">
+    <h1 class="font-custom text-center text-xl font-semibold tracking-tighter text-gray-950 md:text-left md:text-4xl dark:text-white">TM</h1>
+    <div class="flex-grow"></div>
+    <nav class="hidden flex-row items-center gap-6 md:visible md:flex">
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#home">Home</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#about">About</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#services">Services</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#projects">Projects</a>
+        <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#contacts">Contacts</a>
+    </nav>
+    <button type="button" class="rounded-full text-gray-950 hover:bg-gray-950/5 md:hidden dark:text-white dark:hover:bg-white/10">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" /></svg>
+    </button>
+</header>
+
+<header id="appbar" class="flex flex-row border-b border-gray-950/5 px-6 py-2 text-gray-950 md:px-10 lg:px-16 dark:border-white/10 dark:text-white">
+    @* <img class="h-10 md:h-12" src="logo.svg" /> *@
+    <h1 class="font-custom text-center text-xl font-semibold tracking-tighter text-gray-950 md:text-left md:text-4xl dark:text-white">TM</h1>
     <div class="flex-grow"></div>
     <nav class="hidden flex-row items-center gap-6 md:visible md:flex">
         <a class="text-sm/6 font-medium text-gray-950 dark:text-white" href="#home">Home</a>
