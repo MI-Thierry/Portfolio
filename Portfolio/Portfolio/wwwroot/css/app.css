@@ -55,6 +55,8 @@
     --blur-xl: 24px;
     --blur-2xl: 40px;
     --blur-3xl: 64px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-custom: "Google Sans Flex", sans-serif;
@@ -209,6 +211,9 @@
   }
 }
 @layer utilities {
+  .invisible {
+    visibility: hidden;
+  }
   .visible {
     visibility: visible;
   }
@@ -296,8 +301,14 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .h-full {
     height: 100%;
+  }
+  .h-screen {
+    height: 100vh;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -406,6 +417,9 @@
   .bg-sky-600 {
     background-color: var(--color-sky-600);
   }
+  .bg-sky-800 {
+    background-color: var(--color-sky-800);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -464,6 +478,9 @@
   .bg-no-repeat {
     background-repeat: no-repeat;
   }
+  .fill-current {
+    fill: currentcolor;
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -476,6 +493,9 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -484,6 +504,9 @@
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
@@ -505,6 +528,10 @@
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -525,6 +552,10 @@
     font-size: var(--text-sm);
     line-height: calc(var(--spacing) * 6);
   }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);
@@ -540,6 +571,10 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .font-thin {
+    --tw-font-weight: var(--font-weight-thin);
+    font-weight: var(--font-weight-thin);
   }
   .tracking-tight {
     --tw-tracking: var(--tracking-tight);
@@ -592,6 +627,11 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .hover\:bg-gray-950\/5 {
     &:hover {
